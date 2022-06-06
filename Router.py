@@ -1,4 +1,4 @@
- from typing import List
+from typing import List
 from itertools import count
 
 
@@ -59,3 +59,22 @@ class Router:
         """Send data from router's buffer to server's buffer"""
         for data_obj in self.buffer:
             self.__servers[data_obj.ip].buffer.append(data_obj)
+
+
+def main():
+    router = Router()
+    sv_from = Server()
+    router.link(sv_from)
+    router.link(Server())
+    router.link(Server())
+    sv_to = Server()
+    router.link(sv_to)
+    sv_from.send_data(Data("Hello", sv_to.get_ip()))
+    router.send_data()
+    sv_to.send_data(Data("Hi", sv_from.get_ip()))
+    router.send_data()
+    [print(i.data) for i in sv_from.get_data()]
+    [print(i.data) for i in sv_to.get_data()]
+
+if __name__ == '__main__':
+    main()

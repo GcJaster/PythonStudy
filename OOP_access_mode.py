@@ -2,7 +2,7 @@ class Clock:
     MAX_TIME = 100_000
     MIN_TIME = 0
 
-    def __init__(self, time: int=0):
+    def __init__(self, time: int = 0):
         self.__time = time
 
     def set_time(self, tm):
