@@ -1,36 +1,25 @@
-class Book:
-    def __init__(self, author: str, title: str, price: int) -> None:
-        self.__author = author
-        self.__title = title
-        self.__price = price
+from typing import Tuple
 
-    @property
-    def author(self) -> str:
-        return self.__author
 
-    @author.setter
-    def author(self, author: str) -> None:
-        if type(author) is str:
-            self.__author = author
+class Line:
+    def __init__(self, x1, y1, x2, y2) -> None:
+        self.__x1 = x1
+        self.__y1 = y1
+        self.__x2 = x2
+        self.__y2 = y2
 
-    @property
-    def title(self) -> str:
-        return self.__title
+    def set_coords(self, x1, y1, x2, y2) -> None:
+        self.__x1, self.__y1, self.__x2, self.__y2 = x1, y1, x2, y2
 
-    @title.setter
-    def title(self, title: str) -> None:
-        if type(title) is str:
-            self.__title = title
+    def get_coords(self) -> Tuple[int, ...]:
+        return self.__x1, self.__y1, self.__x2, self.__y2
 
-    @property
-    def price(self) -> int:
-        return self.__price
+    def draw(self) -> None:
+        print(*self.get_coords())
 
-    @price.setter
-    def price(self, price: int) -> None:
-        if type(price) is int:
-            self.__price = price
 
+p = Line(1, 2, 3, 4)
+p.draw()
 
 
 
