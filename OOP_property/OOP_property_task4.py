@@ -31,4 +31,4 @@ class RadiusVector2D:
 
     @staticmethod
     def norm2(vector) -> int:
-        return vector.x * vector.x + vector.y * vector.x
+        return vector.x * vector.x + vector.y * vector.y
