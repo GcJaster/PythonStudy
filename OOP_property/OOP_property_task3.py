@@ -1,7 +1,7 @@
-from typing import List, Any
+from typing import List
 
 
-class StackObj:
+class Node:
     def __init__(self, data: str) -> None:
         self.__data = data
         self.__next = None
@@ -25,22 +25,22 @@ class StackObj:
 
     @staticmethod
     def __check_next_item(item) -> bool:
-        return isinstance(item, StackObj) or item is None
+        return isinstance(item, Node) or item is None
 
 
 class Stack:
     def __init__(self) -> None:
         self.top = None
 
-    def push(self, obj) -> None:
+    def push(self, node: Node) -> None:
         if not self.top:
-            self.top = obj
+            self.top = node
             return
 
         cur = self.top
         while cur.next:
             cur = cur.next
-        cur.next = obj
+        cur.next = node
 
     def pop(self) -> None:
         if self.top.next is None:
@@ -64,9 +64,9 @@ class Stack:
 
 
 st = Stack()
-st.push(StackObj("obj1"))
-st.push(StackObj("obj2"))
-st.push(StackObj("obj3"))
+st.push(Node("obj1"))
+st.push(Node("obj2"))
+st.push(Node("obj3"))
 st.pop()
 st.pop()
 print(st.get_data())
