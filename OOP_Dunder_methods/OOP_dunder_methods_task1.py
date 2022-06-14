@@ -5,7 +5,7 @@ class Book:
         self.pages = pages
         self.year = year
 
-    def __setattr__(self, key, value):
+    def __setattr__(self, key, value) -> None:
         if key == 'title' or key == "author":
             if not isinstance(value, str):
                 raise TypeError('Неверный тип присваиваемых данных.')
@@ -17,7 +17,7 @@ class Book:
         object.__setattr__(self, key, value)
 
 
-def main():
+def main() -> None:
     book = Book("Сергей Балакирев", "Python", 123, 2022)
 
     print(book.__dict__)
