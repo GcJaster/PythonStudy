@@ -37,9 +37,14 @@ class Telecast:
         self.duration = duration
 
 
-pr = TVProgram("Первый канал")
-pr.add_telecast(Telecast(1, "Доброе утро", 10000))
-pr.add_telecast(Telecast(2, "Новости", 2000))
-pr.add_telecast(Telecast(3, "Интервью с ", 20))
-for t in pr.items:
-    print(f"{t.name}: {t.duration}")
+def main():
+    pr = TVProgram("Первый канал")
+    pr.add_telecast(Telecast(1, "Доброе утро", 10000))
+    pr.add_telecast(Telecast(2, "Новости", 2000))
+    pr.add_telecast(Telecast(3, "Интервью с ", 20))
+    for t in pr.items:
+        print(f"{t.name}: {t.duration}")
+
+
+if __name__ == '__main__':
+    main()

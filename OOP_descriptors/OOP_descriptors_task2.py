@@ -53,5 +53,10 @@ class RegisterForm:
               f"</form>",)
 
 
-a = RegisterForm('Vanya', '11111', 'test1@gmail.com')
-a.show()
+def main():
+    a = RegisterForm('Vanya', '11111', 'test1@gmail.com')
+    a.show()
+
+
+if __name__ == '__main__':
+    main()

@@ -47,6 +47,10 @@ class TableSheet:
             print()
 
 
-table = TableSheet(5, 3)
-table.show_table()
+def main():
+    table = TableSheet(5, 3)
+    table.show_table()
 
+
+if __name__ == '__main__':
+    main()

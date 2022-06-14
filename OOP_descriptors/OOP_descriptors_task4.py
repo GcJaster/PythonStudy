@@ -27,12 +27,17 @@ class Bag:
         return sum([thing.weight for thing in self.__things])
 
 
-bag = Bag(1000)
-bag.add_thing(Thing("Книга по Python", 100))
-bag.add_thing(Thing("Котелок", 500))
-bag.add_thing(Thing("Спички", 20))
-bag.add_thing(Thing("Бумага", 100))
-bag.add_thing(Thing("Карандаш", 400))
-w = bag.get_total_weight()
-for t in bag.things:
-    print(f"{t.name}: {t.weight}")
+def main():
+    bag = Bag(1000)
+    bag.add_thing(Thing("Книга по Python", 100))
+    bag.add_thing(Thing("Котелок", 500))
+    bag.add_thing(Thing("Спички", 20))
+    bag.add_thing(Thing("Бумага", 100))
+    bag.add_thing(Thing("Карандаш", 400))
+    w = bag.get_total_weight()
+    for t in bag.things:
+        print(f"{t.name}: {t.weight}")
+
+
+if __name__ == '__main__':
+    main()
