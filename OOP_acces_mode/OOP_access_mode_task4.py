@@ -29,5 +29,10 @@ class Rectangle:
         print(f"Прямоугольник с координатами: {self.__sp.get_coords()} {self.__ep.get_coords()}")
 
 
-rect = Rectangle(Point(0,0), Point(24,33))
-rect.draw()
+def main():
+    rect = Rectangle(Point(0,0), Point(24,33))
+    rect.draw()
+
+
+if __name__ == '__main__':
+    main()

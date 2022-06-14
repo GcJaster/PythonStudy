@@ -35,5 +35,10 @@ class EmailValidator:
         return type(email) is str
 
 
-# res = EmailValidator.check_email("sc_lib@list.ru")  # True
-print(EmailValidator.get_random_email())
+def main():
+    # res = EmailValidator.check_email("sc_lib@list.ru")  # True
+    print(EmailValidator.get_random_email())
+
+
+if __name__ == '__main__':
+    main()

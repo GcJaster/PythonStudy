@@ -18,8 +18,11 @@ class Line:
         print(*self.get_coords())
 
 
-p = Line(1, 2, 3, 4)
-p.draw()
+def main():
+    p = Line(1, 2, 3, 4)
+    p.draw()
 
 
+if __name__ == '__main__':
+    main()
 

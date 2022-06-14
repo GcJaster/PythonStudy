@@ -50,7 +50,7 @@ class LinkedList:
             self.tail = None
             self.head = None
 
-    def get_data(self) -> List[Any, ...]:
+    def get_data(self) -> List[Any]:
         result = []
         obj = self.head
         while obj:
@@ -59,9 +59,14 @@ class LinkedList:
         return result
 
 
-lst = LinkedList()
-lst.add_obj(ObjList("данные 1"))
-lst.add_obj(ObjList("данные 2"))
-lst.add_obj(ObjList("данные 3"))
-res = lst.get_data()  # ['данные 1', 'данные 2', 'данные 3']
+def main():
+    lst = LinkedList()
+    lst.add_obj(ObjList("данные 1"))
+    lst.add_obj(ObjList("данные 2"))
+    lst.add_obj(ObjList("данные 3"))
+    res = lst.get_data()  # ['данные 1', 'данные 2', 'данные 3']
+    print(res)
 
+
+if __name__ == '__main__':
+    main()
