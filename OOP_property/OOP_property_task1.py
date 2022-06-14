@@ -16,6 +16,11 @@ class Car:
         return type(model) is str and 2 <= len(model) <= 100
 
 
-car = Car()
-car.model = "Toyota"
-print(car.__dict__)
+def main():
+    car = Car()
+    car.model = "Toyota"
+    print(car.__dict__)
+
+
+if __name__ == '__main__':
+    main()

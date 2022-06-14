@@ -26,8 +26,9 @@ class WindowDlg:
                 self.__height = new_height
                 self.show()
 
-    def verify(self, value) -> bool:
-        return type(value) is int and 0 <= value <= 10_000
-
     def show(self) -> None:
         print(f"{self.__title}: {self.__width}, {self.__height}")
+
+    @staticmethod
+    def verify(value) -> bool:
+        return type(value) is int and 0 <= value <= 10_000

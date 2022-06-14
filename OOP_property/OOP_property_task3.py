@@ -63,10 +63,15 @@ class Stack:
         return res
 
 
-st = Stack()
-st.push(Node("obj1"))
-st.push(Node("obj2"))
-st.push(Node("obj3"))
-st.pop()
-st.pop()
-print(st.get_data())
+def main():
+    st = Stack()
+    st.push(Node("obj1"))
+    st.push(Node("obj2"))
+    st.push(Node("obj3"))
+    st.pop()
+    st.pop()
+    print(st.get_data())
+
+
+if __name__ == '__main__':
+    main()
