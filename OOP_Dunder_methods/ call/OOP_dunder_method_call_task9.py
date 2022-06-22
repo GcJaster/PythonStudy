@@ -18,6 +18,7 @@ def input_dg():
     return input()
 
 
-res = input_dg()
-print(res)
+if __name__ == '__main__':
+    res = input_dg()
+    print(res)
 
