@@ -88,10 +88,11 @@ class LinkedList:
             return node.data
 
 
-linked_lst = LinkedList()
-linked_lst.add_obj(ObjList("Sergey"))
-linked_lst.add_obj(ObjList("Balakirev"))
-linked_lst.add_obj(ObjList("Python"))
-linked_lst.add_obj(ObjList("Python ООП"))
-linked_lst.remove_obj(3)
-print(linked_lst(1))
+if __name__ == '__main__':
+    linked_lst = LinkedList()
+    linked_lst.add_obj(ObjList("Sergey"))
+    linked_lst.add_obj(ObjList("Balakirev"))
+    linked_lst.add_obj(ObjList("Python"))
+    linked_lst.add_obj(ObjList("Python ООП"))
+    linked_lst.remove_obj(3)
+    print(linked_lst(1))
