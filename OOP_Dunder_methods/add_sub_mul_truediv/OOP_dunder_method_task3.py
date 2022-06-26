@@ -1,22 +1,26 @@
+from typing import NoReturn, Any
+
+
 class StackObj:
-    def __init__(self, data):
+    def __init__(self, data) -> NoReturn:
         self.__data = data
         self.__next = None
 
     @property
-    def next(self):
+    def next(self) -> Any:
         return self.__next
 
     @next.setter
-    def next(self, obj):
+    def next(self, obj) -> NoReturn:
         self.__next = obj
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self) -> NoReturn:
         self.top = None
 
-    def push_back(self, obj):
+    def push_back(self, obj) -> NoReturn:
+        """Push StackObj to the end of a linked list"""
         new_node = obj
 
         if self.top is None:
@@ -29,6 +33,7 @@ class Stack:
         cur.next = new_node
 
     def pop_back(self):
+        """Delete last element from linked list"""
         if self.top is None:
             print("None")
             return
@@ -63,19 +68,22 @@ class Stack:
             self.push_back(StackObj(i))
         return self
 
-a = StackObj(1)
-b = StackObj(2)
-c = StackObj(3)
-s = Stack()
-s.push_back(a)
-s.push_back(b)
-s.push_back(c)
-s = s + StackObj(4)
-s.pop_back()
-s.pop_back()
-s.pop_back()
-s = s * ['data_1', 'data_2']
+
+def main():
+    a = StackObj(1)
+    b = StackObj(2)
+    c = StackObj(3)
+    s = Stack()
+    s.push_back(a)
+    s.push_back(b)
+    s.push_back(c)
+    s = s + StackObj(4)
+    s.pop_back()
+    s.pop_back()
+    s.pop_back()
+    s = s * ['data_1', 'data_2']
+    print(s.__dict__)
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
