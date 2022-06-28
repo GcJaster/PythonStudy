@@ -3,13 +3,18 @@ from dataclasses import dataclass
 
 
 class Prop:
+    """Descriptor for the all planes."""
+
     def __set_name__(self, owner, name) -> None:
+        """Set the attribute."""
         self.name = "__" + name
 
     def __get__(self, instance, owner) -> str:
+        """Get value of attribute."""
         return getattr(instance, self.name)
 
     def __set__(self, instance, value) -> None:
+        """Set value to attribute."""
         if self.__verify_value(value):
             if instance.MIN_DIMENSION < value < instance.MAX_DIMENSION:
                 setattr(instance, self.name, value)
@@ -22,19 +27,21 @@ class Prop:
 
 
 class Dimensions:
+    """Dimensions of the object."""
+
+    a: Union[int, float]
+    b: Union[int, float]
+    c: Union[int, float]
     MIN_DIMENSION: int = 10
     MAX_DIMENSION: int = 10000
-    a = Prop()
-    b = Prop()
-    c = Prop()
 
     def __init__(self,
                  a: Union[int, float],
                  b: Union[int, float],
                  c: Union[int, float]) -> None:
-        self.__a = a
-        self.__b = b
-        self.__c = c
+        self.a = a
+        self.b = b
+        self.c = c
 
     @classmethod
     def __verify(cls, other):
@@ -45,7 +52,7 @@ class Dimensions:
 
     def get_volume(self) -> Union[int, float]:
         """Get volume of self."""
-        return self.__a * self.__b * self.__c
+        return self.a * self.b * self.c
 
     def __gt__(self, other) -> bool:
         if self.__verify(other):
