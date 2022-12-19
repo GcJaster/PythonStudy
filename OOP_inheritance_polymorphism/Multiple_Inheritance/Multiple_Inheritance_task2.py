@@ -11,13 +11,17 @@ class ShopItem:
 
 
 class ShopGenericView:
+    Exclude = tuple()
+
     def __str__(self):
-        return "\n".join(f"{k}: {v}" for k, v in self.__dict__.items())
+        return '\n'.join(f'{attr}: {v}' for attr, v in self.__dict__.items() if attr not in self.Exclude)
 
-
-class ShopUserView:
     def __repr__(self):
-        return "\n".join(f"{k}: {v}" for k, v in self.__dict__.items() if k != "_id")
+        return self.__str__()
+
+
+class ShopUserView(ShopGenericView):
+    Exclude = ('_id', )
 
 
 class Book(ShopItem, ShopUserView):
