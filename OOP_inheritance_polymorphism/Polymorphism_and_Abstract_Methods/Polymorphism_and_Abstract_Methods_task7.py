@@ -1,20 +1,23 @@
-from typing import Union, Tuple
+from typing import Union, Tuple, Optional
 
 
 U = Union[int, float]
 
 
 class PointTrack:
+    """Class of description a point for track """
     def __init__(self, x: U, y: U) -> None:
         self.__valid_value(x, y)
         self._x = x
         self._y = y
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Returns the coordinates of the current point as a string"""
         return f'PointTrack: {self._x}, {self._y}'
 
     @staticmethod
-    def __valid_value(value1, value2):
+    def __valid_value(value1, value2) -> None:
+        """Check type of value for Point"""
         if type(value1) not in (int, float) or type(value2) not in (int, float):
             raise TypeError('координаты должны быть числами')
 
