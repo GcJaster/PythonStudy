@@ -3,14 +3,12 @@
 # а остальные данные - без изменений.
 
 
-def get_number(x):
-    try:
-        return int(x)
-    except:
+def convert(value):
+    for T in (int, float, str):
         try:
-            return float(x)
+            return T(value)
         except:
-            return x
+            pass
 
 
 if __name__ == '__main__':
@@ -18,6 +16,6 @@ if __name__ == '__main__':
     lst_out = []
 
     for elem in lst_in:
-        lst_out.append(get_number(elem))
+        lst_out.append(convert(elem))
 
     print(lst_out)
