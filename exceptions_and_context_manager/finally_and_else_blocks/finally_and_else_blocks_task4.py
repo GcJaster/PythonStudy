@@ -40,16 +40,16 @@ class Rect:
             raise TypeError("прямоугольники пересекаются")
 
 
-def is_collision(r1, r2):
-    try:
-        r1.is_collision(r2)
-    except TypeError:
-        return True
-    return False
-
-
 if __name__ == '__main__':
     lst_rect = [Rect(0, 0, 5, 3), Rect(6, 0, 3, 5), Rect(3, 2, 4, 4), Rect(0, 8, 8, 1)]
-    length = len(lst_rect)
-    lst_not_collision = [lst_rect[i] for i in range(length)
-                         if not any(is_collision(lst_rect[i], lst_rect[j]) for j in range(length) if i != j)]
+    lst_not_collision = []
+    n = len(lst_rect)
+    for i in range(n):
+        try:
+            for j in range(n):
+                if lst_rect[i] != lst_rect[j]:
+                    lst_rect[i].is_collision(lst_rect[j])
+        except TypeError:
+            continue
+        else:
+            lst_not_collision.append(lst_rect[i])
