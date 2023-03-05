@@ -1,4 +1,5 @@
-from OOP_access_mode import OOP_access_mode, Router
+import OOP_access_mode
+import Router
 
 
 def main():
